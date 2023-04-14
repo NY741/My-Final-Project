@@ -3,6 +3,19 @@ import React from "react";
 import LogoFooter from "./LogoFooter";
 import categories from "../data/categories";
 
+const cats = [];
+for (let i = 0, len = categories.length; i < len; i += 3) {
+    cats.push(
+      <div>
+        {categories.slice(i, i + 3).map(item => (
+          <a href={'/news?category=' + item} title={item}>
+            {item}
+          </a>
+        ))}
+      </div>
+    );
+}
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -10,7 +23,9 @@ const Footer = () => {
         <LogoFooter />
       </div>
       <div className="footer-links">
-        <div>
+        {cats}
+
+        {/* <div>
           <a href="#" title="politics">
             Politics
           </a>
@@ -68,7 +83,7 @@ const Footer = () => {
           <a href="#" title="war">
             War
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

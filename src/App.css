@@ -68,6 +68,16 @@ nav a:hover {
   box-shadow: 0 0 3px #000;
 }
 
+.nav-hidden {
+  display: none;
+  background-color: var(--primary-color);
+  margin-top: 200px;
+}
+
+.nav-hidden a {
+  display: block;
+}
+
 .active {
   color: var(--primary-color);
   background-color: #fff;
@@ -135,9 +145,9 @@ button:hover {
   background-color: #efd;
 }
 
-/* button:active {
-  background-color: #089;
-} */
+.btn-load:disabled {
+  display: none;
+}
 
 .content {
   border: 1px solid #000;
@@ -338,4 +348,10 @@ aside {
 .footer-link {
   color: var(--light-color);
   margin-right: 20px;
+}
+
+@media only screen and (max-width: 768) {
+  .nav-hidden {
+    display: block;
+  }
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import LogoHeader from "./LogoHeader";
 import Nav from "./Nav";
+import NavHidden from "./NavHidden";
 import Form from "./Form";
 
 const Header = () => {
@@ -11,9 +12,7 @@ const Header = () => {
         <Nav />
         <Form />
       </header>
-      <header className="header-mobile">
-        <h2>Fuck you!</h2>
-      </header>
+      <NavHidden />
     </>
   );
 };

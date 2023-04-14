@@ -27,6 +27,8 @@ const News = () => {
   const navigate = useNavigate();
   const [sortKey, setSortKey] = useState(query.sort);
   const [sortedNews, setSortedNews] = useState(sortNews(news, sortKey));
+  const [count, setCount] = useState(16);
+  const addCount = 8;
 
   useEffect(() => {
     if (!SORT_KEYS.includes(sortKey) && !('category' in query)) {
@@ -48,13 +50,21 @@ const News = () => {
     let q = []
 
     for (let key in query) {
-      if (key != name) {
+      if (key !== name) {
         q.push(key + '=' + query[key])
       }
     }
 
     window.location.href = window.location.origin + window.location.pathname
       + '?' + name + '=' + e.target.value + (q.length ? '&' + q.join('&') : '')
+  }
+
+  function showMore() {
+    setCount(count + addCount)
+  }
+
+  function showAll() {
+    setCount(sortedNews.length)
   }
 
   console.log(sortKey);
@@ -81,7 +91,7 @@ const News = () => {
         <select id="news-sort-select" onChange={sortBy}>
           <option value="">Choose</option>
           {SORT_KEYS.map(item => (
-            <option value={item} selected={sortKey == item ? 'selected' : ''}>
+            <option value={item} selected={sortKey === item ? 'selected' : ''}>
               {item.charAt(0).toUpperCase()+item.slice(1)}
             </option>
           ))}
@@ -94,7 +104,7 @@ const News = () => {
         <select id="news-category-select" onChange={filterByCategory}>
           <option value="">Choose</option>
           {categories.map(item => (
-            <option value={item} selected={query.category == item ? 'selected' : ''}>
+            <option value={item} selected={query.category === item ? 'selected' : ''}>
               {item}
             </option>
           ))}
@@ -104,7 +114,7 @@ const News = () => {
       <br></br>
 
       <div className="card-block">
-        {sortedNews.filter(v => !query.category || query.category == v.category).map((singleNews) => (
+        {sortedNews.slice(0, count).filter(v => !query.category || query.category === v.category).map((singleNews) => (
           <div className="card">
             <div className="card-image">
               <img src={singleNews.img} alt={singleNews.title} />
@@ -135,10 +145,24 @@ const News = () => {
           </div>
         ))}
       </div>
-      {/* <button disabled={partialNews} onClick={showMoreHandler} className="btn-load">Load More...</button> */}
+      <button disabled={count >= sortedNews.length} onClick={showMore} className="btn-load">Load More</button>
+      <button disabled={count >= sortedNews.length} onClick={showAll} className="btn-load">Load All</button>
     </main>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //   return (
 //     <main>
