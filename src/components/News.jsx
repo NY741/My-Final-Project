@@ -30,6 +30,8 @@ const News = () => {
   const [count, setCount] = useState(16);
   const addCount = 8;
 
+  const newsList = sortedNews.filter((v) => !query.category || query.category === v.category)
+
   useEffect(() => {
     if (!SORT_KEYS.includes(sortKey) && !("category" in query)) {
       navigate(".");
@@ -70,24 +72,8 @@ const News = () => {
   }
 
   function showAll() {
-    setCount(sortedNews.length);
+    setCount(newsList.length);
   }
-
-  console.log(sortKey);
-  console.log(location);
-  console.log(query);
-  console.log(categories);
-
-  console.log(SORT_KEYS);
-
-  // let partialNews = sortedNews.slice(0, 16);
-
-  // const [partialNews, setNewsNumber] = useState(16);
-
-  //  showMoreHandler((e, num)) => {
-  //   e.preventDefault();
-
-  //  }
 
   let date = new Date();
   date.setDate(date.getDate() - 7);
@@ -126,8 +112,7 @@ const News = () => {
       <br></br>
 
       <div className="card-block">
-        {sortedNews
-          .filter((v) => !query.category || query.category === v.category)
+        {newsList
           .slice(0, count)
           .map((singleNews) => (
             <div className="card">
@@ -162,14 +147,14 @@ const News = () => {
       </div>
       <div className="news-buttons">
         <button
-          disabled={count >= sortedNews.length}
+          disabled={count >= newsList.length}
           onClick={showMore}
           className="btn-load"
         >
           Load More
         </button>
         <button
-          disabled={count >= sortedNews.length}
+          disabled={count >= newsList.length}
           onClick={showAll}
           className="btn-load"
         >
