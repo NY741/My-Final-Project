@@ -81,9 +81,9 @@ nav a:hover {
   font-weight: 500;
 }
 
-/* .login input::placeholder:focus {
+.login input:focus::placeholder {
   color: transparent;
-} */
+}
 
 .login input {
   padding: 5px;
@@ -160,6 +160,19 @@ button:hover {
   border-right: 1px solid #000;
 }
 
+.main > h3, .main > p, .main > ul {
+  margin-bottom: 15px;
+}
+
+mark {
+  padding: 5px 8px;
+}
+
+
+
+
+
+
 .news-sort-filter {
   display: flex;
   flex-flow: row wrap;
@@ -181,7 +194,7 @@ option {
 }
 
 select:focus {
-  background-color: #efe;
+  background-color: #eff;
 }
 
 .card-block {
