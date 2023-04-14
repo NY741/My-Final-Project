@@ -160,18 +160,17 @@ button:hover {
   border-right: 1px solid #000;
 }
 
-.main > h3, .main > p, .main > ul {
+.main > h3,
+.main > p,
+.main > ul {
   margin-bottom: 15px;
 }
 
 mark {
-  padding: 5px 8px;
+  padding: 3px 6px;
+  background-color: #efe;
+  border: 1px dashed #000;
 }
-
-
-
-
-
 
 .news-sort-filter {
   display: flex;
