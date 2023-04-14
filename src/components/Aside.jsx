@@ -6,8 +6,8 @@ import foxLogo from "../images/news-fox.png";
 
 const Aside = () => {
   return (
-    <aside>
-      <h1>Partners</h1>
+    <aside className="aside">
+      <h2>Partners</h2>
       <div className="aside-logo">
         <a href="http://bbc.com" title="BBC">
           <img src={bbcLogo} alt="bbc" />

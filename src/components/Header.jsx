@@ -1,7 +1,6 @@
 import React from "react";
 import LogoHeader from "./LogoHeader";
 import Nav from "./Nav";
-import NavHidden from "./NavHidden";
 import Form from "./Form";
 
 const Header = () => {
@@ -12,7 +11,6 @@ const Header = () => {
         <Nav />
         <Form />
       </header>
-      <NavHidden />
     </>
   );
 };

@@ -30,7 +30,9 @@ const News = () => {
   const [count, setCount] = useState(16);
   const addCount = 8;
 
-  const newsList = sortedNews.filter((v) => !query.category || query.category === v.category)
+  const newsList = sortedNews.filter(
+    (v) => !query.category || query.category === v.category
+  );
 
   useEffect(() => {
     if (!SORT_KEYS.includes(sortKey) && !("category" in query)) {
@@ -79,71 +81,71 @@ const News = () => {
   date.setDate(date.getDate() - 7);
 
   return (
-    <main>
+    <main className="main">
       <h1>{sortKey ? `News sorted by ${sortKey}` : "News feedback"}</h1>
+      <div className="news-sort-filter">
+        <div>
+          <select id="news-sort-select" onChange={sortBy}>
+            <option value="">Choose</option>
+            {SORT_KEYS.map((item) => (
+              <option
+                value={item}
+                selected={sortKey === item ? "selected" : ""}
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      <div className="news-sort">
-        <select id="news-sort-select" onChange={sortBy}>
-          <option value="">Choose</option>
-          {SORT_KEYS.map((item) => (
-            <option value={item} selected={sortKey === item ? "selected" : ""}>
-              {item.charAt(0).toUpperCase() + item.slice(1)}
-            </option>
-          ))}
-        </select>
+        <br></br>
+
+        <div>
+          <select id="news-category-select" onChange={filterByCategory}>
+            <option value="">Choose</option>
+            {categories.map((item) => (
+              <option
+                value={item}
+                selected={query.category === item ? "selected" : ""}
+              >
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-
-      <br></br>
-
-      <div className="news-filter">
-        <select id="news-category-select" onChange={filterByCategory}>
-          <option value="">Choose</option>
-          {categories.map((item) => (
-            <option
-              value={item}
-              selected={query.category === item ? "selected" : ""}
-            >
-              {item}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <br></br>
 
       <div className="card-block">
-        {newsList
-          .slice(0, count)
-          .map((singleNews) => (
-            <div className="card">
-              <div className="card-image">
-                <img src={singleNews.img} alt={singleNews.title} />
-              </div>
-              <div className="card-content">
-                <Link to={singleNews.id} className="card-link">
-                  <h3
-                    className={
-                      new Date(singleNews.date) >= date
-                        ? "card-title-new"
-                        : "card-title"
-                    }
-                  >
-                    {singleNews.title.length >= 45
-                      ? singleNews.title.slice(0, 45) + "..."
-                      : singleNews.title}
-                  </h3>
-                </Link>
-                <Link to={singleNews.category}>
-                  <h4 className="card-category">{singleNews.category}</h4>
-                </Link>
-                <p className="card-paragraph">
-                  {singleNews.description.length >= 120
-                    ? singleNews.description.slice(0, 120) + "..."
-                    : singleNews.description}
-                </p>
-              </div>
+        {newsList.slice(0, count).map((singleNews) => (
+          <div className="card">
+            <div className="card-image">
+              <img src={singleNews.img} alt={singleNews.title} />
             </div>
-          ))}
+            <div className="card-content">
+              <Link to={singleNews.id} className="card-link">
+                <h3
+                  className={
+                    new Date(singleNews.date) >= date
+                      ? "card-title-new"
+                      : "card-title"
+                  }
+                >
+                  {singleNews.title.length >= 45
+                    ? singleNews.title.slice(0, 45) + "..."
+                    : singleNews.title}
+                </h3>
+              </Link>
+              <Link to={singleNews.category}>
+                <h4 className="card-category">{singleNews.category}</h4>
+              </Link>
+              <p className="card-paragraph">
+                {singleNews.description.length >= 120
+                  ? singleNews.description.slice(0, 120) + "..."
+                  : singleNews.description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
       <div className="news-buttons">
         <button
@@ -151,14 +153,14 @@ const News = () => {
           onClick={showMore}
           className="btn-load"
         >
-          Load More
+          Load More News
         </button>
         <button
           disabled={count >= newsList.length}
           onClick={showAll}
           className="btn-load"
         >
-          Load All
+          Load All News
         </button>
       </div>
     </main>

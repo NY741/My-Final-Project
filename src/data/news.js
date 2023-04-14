@@ -4,7 +4,7 @@ const news = [
     date: "2023-03-31",
     title: "Breaking down Trump’s ‘Soros’ attack on the Manhattan DA",
     category: "Politics",
-    img: "https://picsum.photos/220/160",
+    img: "https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-04/230414-trump-sj-924-617e02.jpg",
     description:
       "In the wake of a Manhattan grand jury’s historic decision to indict Donald Trump, the former president and some other prominent Republicans, including Florida Gov. Ron DeSantis and former Secretary of State Mike Pompeo, have invoked liberal billionaire George Soros in their attacks on Manhattan District Attorney Alvin Bragg. Trump claimed in a statement that Bragg was “hand-picked and funded by George Soros.”Soros, a longtime supporter of Democratic campaigns, various liberal causes and prosecutors who favor criminal justice reform, has been a frequent target of antisemitic conspiracy theories painting the Jewish philanthropist as a puppetmaster behind various US and international events. Soros did not make any direct contributions to Bragg’s 2021 election campaign, and a Soros spokesperson, Michael Vachon, told CNN last week that the two men have never once communicated in any way.Rather, Soros’s connection to Bragg is indirect: he has been a major donor to a liberal political action committee that supported Bragg’s candidacy. A spokesperson for the PAC denounced the Soros-related attacks on Bragg in an interview with CNN last week, calling them “antisemitic,” “anti-Black” and an overstatement of both Soros’s role in the PAC’s decision-making and the PAC’s role in Bragg’s election victory.",
   },
