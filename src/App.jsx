@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import About from "./components/About";
 import News from "./components/News";
 import SingleNews from "./components/SingleNews";
 import NotFound from "./components/NotFound";
@@ -15,7 +14,6 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
             <Route path="news" element={<News />} />
             <Route path="news/:newsId" element={<SingleNews />} />  
             <Route path="*" element={<NotFound />} />
