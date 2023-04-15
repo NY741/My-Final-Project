@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import LogoImage2 from "../images/logo-image-black-and-white.png";
 
-const LogoFooter = (props) => {
-  //   const { logoRed, logoBlackAndWhite } = props;
+const LogoFooter = () => {
   return (
     <div className="logo">
       <Link to=".">

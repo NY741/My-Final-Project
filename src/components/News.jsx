@@ -13,14 +13,6 @@ function sortNews(news, key) {
   return sortedNews;
 }
 
-// function filterNews(news, category) {
-//   const sortedNews = [...news];
-//   sortedNews.filter(
-//     (singleNews) => (singleNews.category === category)
-//   );
-//   return sortedNews;
-// }
-
 const News = () => {
   const location = useLocation();
   const query = queryString.parse(location.search);
@@ -121,7 +113,7 @@ const News = () => {
         {newsList.slice(0, count).map((singleNews, index) => (
           <div className="card">
             <div className="card-image">
-              <img src={singleNews.img} alt={singleNews.title} key={index}/>
+              <img src={singleNews.img} alt={singleNews.title} key={index} />
             </div>
             <div className="card-content">
               <Link to={singleNews.id} className="card-link">
