@@ -12,14 +12,21 @@ const Home = () => {
         filter them using buttons with options.
       </p>
       <p>
-        You need to click <mark>Load More News</mark> to load 8 more newsblocks and <mark>Load All News</mark> to load all news in the website.
+        You need to click <mark>Load More News</mark> to load 8 more newsblocks.
+      </p>
+      <p>
+      And as well you need to click <mark>Load All News</mark> to load all newsblock.
+      </p>
+      <p>
+        If you want to review <mark>exact</mark> news, you need to click on its
+        title.
       </p>
       <p>
         News have a <mark>New</mark> sign when their release date is less than a
         week.
       </p>
       <p>
-        News can be <mark>sorted</mark> by:
+        News can be <mark>sorted</mark> by these parameters:
       </p>
       <ul>
         <li>Title</li>
