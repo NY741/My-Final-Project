@@ -5,8 +5,8 @@ import News from "./components/News";
 import SingleNews from "./components/SingleNews";
 import NotFound from "./components/NotFound";
 import React from "react";
-import "./App.css";
 import MainLayout from "./layouts/MainLayout";
+import "./App.css";
 
 function App() {
   return (
