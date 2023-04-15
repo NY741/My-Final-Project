@@ -3,7 +3,7 @@ import React from "react";
 const Home = () => {
   return (
     <main className="main">
-      <h1>Home</h1>
+      <h1>Welcome page</h1>
       <h3>Hello, Dear Users !</h3>
       <p>
         This is my final project and it is a News React Application. Using this
