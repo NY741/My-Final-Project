@@ -13,6 +13,9 @@ const Home = () => {
         filter them using buttons with options.
       </p>
       <p>
+        You need to click <mark>Load More News</mark> to load 8 more newsblocks and <mark>Load All News</mark> to load all news in the website.
+      </p>
+      <p>
         News have a <mark>New</mark> sign when their release date is less than a
         week.
       </p>
@@ -43,11 +46,6 @@ const Home = () => {
         <li>Fashion</li>
         <li>War</li>
       </ul>
-      {/* {categories.map((item) => {
-        <ul>
-          <li>{item}</li>
-        </ul>;
-      })} */}
     </main>
   );
 };

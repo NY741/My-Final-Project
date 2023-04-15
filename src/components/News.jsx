@@ -78,7 +78,7 @@ const News = () => {
   }
 
   let date = new Date();
-  date.setDate(date.getDate() - 7);
+  date.setDate(date.getDate() - 10);
 
   return (
     <main className="main">
@@ -166,43 +166,5 @@ const News = () => {
     </main>
   );
 };
-
-//   return (
-//     <main>
-//       <h1>{sortKey ? `News sorted by ${sortKey}` : "News"}</h1>
-//       <div className="news-filter">
-//         {categories.map((category) => {
-//           <>
-//             <select>
-//               <option value={category}>{category}</option>
-//             </select>
-//           </>;
-//         })}
-//       </div>
-//       <div className="card-block">
-//         {sortedNews.map((singleNews) => (
-//           <div className="card">
-//             <div className="card-image">
-//               <img src={singleNews.img} alt={singleNews.title} />
-//             </div>
-//             <div className="card-content">
-//               <Link to={singleNews.id}>
-//                 <h3 className="card-title">{singleNews.title}</h3>
-//               </Link>
-//               <Link to={singleNews.category}>
-//                 <h4 className="card-category">{singleNews.category}</h4>
-//               </Link>
-//               <p className="card-paragraph">
-//                 {singleNews.description.length >= 150
-//                   ? singleNews.description.slice(0, 149) + "..."
-//                   : singleNews.description}
-//               </p>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </main>
-//   );
-// };
 
 export default News;
