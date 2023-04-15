@@ -87,10 +87,11 @@ const News = () => {
         <div>
           <select id="news-sort-select" onChange={sortBy}>
             <option value="">Choose</option>
-            {SORT_KEYS.map((item) => (
+            {SORT_KEYS.map((item, index) => (
               <option
                 value={item}
                 selected={sortKey === item ? "selected" : ""}
+                key={index}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </option>
@@ -103,10 +104,11 @@ const News = () => {
         <div>
           <select id="news-category-select" onChange={filterByCategory}>
             <option value="">Choose</option>
-            {categories.map((item) => (
+            {categories.map((item, index) => (
               <option
                 value={item}
                 selected={query.category === item ? "selected" : ""}
+                key={index}
               >
                 {item}
               </option>
@@ -116,10 +118,10 @@ const News = () => {
       </div>
 
       <div className="card-block">
-        {newsList.slice(0, count).map((singleNews) => (
+        {newsList.slice(0, count).map((singleNews, index) => (
           <div className="card">
             <div className="card-image">
-              <img src={singleNews.img} alt={singleNews.title} />
+              <img src={singleNews.img} alt={singleNews.title} key={index}/>
             </div>
             <div className="card-content">
               <Link to={singleNews.id} className="card-link">

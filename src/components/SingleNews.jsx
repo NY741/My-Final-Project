@@ -14,7 +14,7 @@ const SingleNews = () => {
   }, [singleNews, navigate]);
 
   return (
-    <main>
+    <main className="main">
       <div className="single-news">
         <h1>{singleNews?.title}</h1>
         <div className="single-news-image">

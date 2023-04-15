@@ -7,8 +7,8 @@ const cats = [];
 for (let i = 0, len = categories.length; i < len; i += 3) {
   cats.push(
     <div>
-      {categories.slice(i, i + 3).map((item) => (
-        <a href={"/news?category=" + item} title={item}>
+      {categories.slice(i, i + 3).map((item, index) => (
+        <a href={"/news?category=" + item} title={item} key={index}>
           {item}
         </a>
       ))}
