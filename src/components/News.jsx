@@ -91,15 +91,13 @@ const News = () => {
           </select>
         </div>
 
-        <br></br>
-
         <div>
           <select id="news-category-select" onChange={filterByCategory}>
             <option value="">Choose</option>
             {categories.map((item, index) => (
               <option
                 value={item}
-                selected={query.category === item ? "selected" : ""}
+                selected={query?.category === item ? "selected" : ""}
                 key={index}
               >
                 {item}
@@ -113,29 +111,29 @@ const News = () => {
         {newsList.slice(0, count).map((singleNews, index) => (
           <div className="card">
             <div className="card-image">
-              <img src={singleNews.img} alt={singleNews.title} key={index} />
+              <img src={singleNews?.img} alt={singleNews?.title} key={index} />
             </div>
             <div className="card-content">
-              <Link to={singleNews.id} className="card-link">
+              <Link to={singleNews?.id} className="card-link">
                 <h3
                   className={
-                    new Date(singleNews.date) >= date
+                    new Date(singleNews?.date) >= date
                       ? "card-title-new"
                       : "card-title"
                   }
                 >
-                  {singleNews.title.length >= 45
-                    ? singleNews.title.slice(0, 45) + "..."
-                    : singleNews.title}
+                  {singleNews?.title.length >= 45
+                    ? singleNews?.title.slice(0, 45) + "..."
+                    : singleNews?.title}
                 </h3>
               </Link>
-              <Link to={singleNews.category}>
-                <h4 className="card-category">{singleNews.category}</h4>
+              <Link to={singleNews?.category}>
+                <h4 className="card-category">{singleNews?.category}</h4>
               </Link>
               <p className="card-paragraph">
-                {singleNews.description.length >= 120
-                  ? singleNews.description.slice(0, 120) + "..."
-                  : singleNews.description}
+                {singleNews?.description.length >= 120
+                  ? singleNews?.description.slice(0, 120) + "..."
+                  : singleNews?.description}
               </p>
             </div>
           </div>

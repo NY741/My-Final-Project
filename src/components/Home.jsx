@@ -14,7 +14,8 @@ const Home = () => {
         You need to click <mark>Load More News</mark> to load 8 more newsblocks.
       </p>
       <p>
-      And as well you need to click <mark>Load All News</mark> to load all newsblock.
+        And as well you need to click <mark>Load All News</mark> to load all
+        newsblock.
       </p>
       <p>
         If you want to review <mark>exact</mark> news, you need to click on its
