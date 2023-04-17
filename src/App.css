@@ -114,7 +114,6 @@ h2 {
   font-size: 28pt;
   font-family: Poppins, sans-serif;
   margin-bottom: 20px;
-  /* border: 1px dashed #000; */
   background-color: var(--light-color);
   text-shadow: 0 0 10px #999;
 }
@@ -299,9 +298,12 @@ select:focus {
 }
 
 .single-news p {
+  text-align: justify;
   font-family: "Poppins", sans-serif;
   font-size: 12pt;
   letter-spacing: 0.6px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #000;
 }
 
 .single-news p::first-letter {
@@ -316,7 +318,8 @@ select:focus {
   max-width: 150px;
   font-weight: 600;
   padding: 8px 10px;
-  margin: 30px auto;
+  margin: 20px auto;
+  margin-bottom: 15px;
   border: 1px solid #000;
   border-radius: 5px;
   color: var(--light-color);

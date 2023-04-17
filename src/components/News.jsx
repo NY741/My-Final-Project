@@ -108,7 +108,7 @@ const News = () => {
       </div>
 
       <div className="card-block">
-        {newsList.slice(0, count).map((singleNews, index) => (
+        {newsList?.slice(0, count).map((singleNews, index) => (
           <div className="card">
             <div className="card-image">
               <img src={singleNews?.img} alt={singleNews?.title} key={index} />

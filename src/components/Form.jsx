@@ -23,13 +23,13 @@ const Form = () => {
 
   return (
     <form className="login" onSubmit={handleFormSubmit}>
-      <label for="username">Username:</label>
+      <label htmlFor="username">Username:</label>
       <input
         type="text"
         value={data.username}
         onChange={(e) => handleInputChange(e, "username")}
       />
-      <label for="password">Password:</label>
+      <label htmlFor="password">Password:</label>
       <input
         type="password"
         value={data.password}
