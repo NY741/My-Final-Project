@@ -31,7 +31,6 @@ const Home = () => {
       <ul>
         <li>Title</li>
         <li>Date</li>
-        <li>ID</li>
       </ul>
       <p>
         News can also be <mark>filtered</mark> by all the categories:

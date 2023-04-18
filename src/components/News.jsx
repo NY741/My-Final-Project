@@ -4,7 +4,7 @@ import queryString from "query-string";
 import news from "../data/news";
 import categories from "../data/categories";
 
-const SORT_KEYS = ["title", "date", "id"];
+const SORT_KEYS = ["title", "date"];
 
 function sortNews(news, key) {
   const sortedNews = [...news];
@@ -70,7 +70,7 @@ const News = () => {
   }
 
   let date = new Date();
-  date.setDate(date.getDate() - 10);
+  date.setDate(date.getDate() - 14);
 
   return (
     <main className="main">
@@ -127,9 +127,7 @@ const News = () => {
                     : singleNews?.title}
                 </h3>
               </Link>
-              <Link to={singleNews?.category}>
-                <h4 className="card-category">{singleNews?.category}</h4>
-              </Link>
+              <h4 className="card-category">{singleNews?.category}</h4>
               <p className="card-paragraph">
                 {singleNews?.description.length >= 120
                   ? singleNews?.description.slice(0, 120) + "..."
@@ -139,6 +137,7 @@ const News = () => {
           </div>
         ))}
       </div>
+
       <div className="news-buttons">
         <button
           disabled={count >= newsList.length}
